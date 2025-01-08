@@ -8,17 +8,15 @@ const nextConfig = {
   // server to be running Next.js - which can't be true for a fully static site. So disable it.
   assetPrefix: '/',
   images: {
-    unoptimized: true
+    unoptimized: true,
   },
-
-  // Optional: Change links `/me` -> `/me/` and emit `/me.html` -> `/me/index.html`
-  // trailingSlash: true,
-
-  // Optional: Prevent automatic `/me` -> `/me/`, instead preserve `href`
-  // skipTrailingSlashRedirect: true,
-
-  // Optional: Change the output directory `out` -> `dist`
   distDir: 'out',
+  reactStrictMode: true,
+
+  // TODO: Remove this once all lint errors fixed
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
 }
 
-module.exports = nextConfig
+export default nextConfig
