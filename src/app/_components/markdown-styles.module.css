@@ -1,5 +1,5 @@
 .markdown {
-    @apply text-lg leading-relaxed;
+    @apply text-base leading-relaxed;
 }
 
 .markdown p,
@@ -9,10 +9,42 @@
     @apply my-6;
 }
 
+.markdown a {
+    @apply underline decoration-slate-200;
+}
+
+.markdown a:hover {
+    @apply underline decoration-slate-400;
+}
+
+.markdown ul {
+    @apply list-disc pl-4;
+}
+
+.markdown ol {
+    @apply list-decimal pl-4;
+}
+
+.markdown h1 {
+    @apply text-3xl mt-12 mb-4 leading-snug font-semibold;
+}
+
 .markdown h2 {
     @apply text-3xl mt-12 mb-4 leading-snug;
 }
 
 .markdown h3 {
     @apply text-2xl mt-8 mb-4 leading-snug;
+}
+
+.markdown h4 {
+    @apply text-xl mt-8 mb-4 leading-snug;
+}
+
+.markdown h5 {
+    @apply text-lg mt-8 mb-4 leading-snug;
+}
+
+.markdown h6 {
+    @apply text-lg mt-8 mb-4 leading-snug;
 }
