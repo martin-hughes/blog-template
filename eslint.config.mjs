@@ -127,7 +127,7 @@ export default [
         {
           selector: 'variable',
           modifiers: ['exported', 'const'],
-          format: ['PascalCase', 'camelCase'],
+          format: ['PascalCase', 'camelCase', 'UPPER_CASE'],
         },
       ],
     },

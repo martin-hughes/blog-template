@@ -4,7 +4,7 @@ import styles from './switch.module.css'
 import {memo, useEffect, useState} from 'react'
 
 declare global {
-  var updateDOM: () => void
+  let updateDOM: () => void
 }
 
 type ColorSchemePreference = 'system' | 'dark' | 'light'
@@ -56,6 +56,7 @@ let updateDOM: () => void
 /**
  * Switch button to quickly toggle user preference.
  */
+// eslint-disable-next-line @typescript-eslint/naming-convention
 const Switch = () => {
   const [mode, setMode] = useState<ColorSchemePreference>(
     () =>
@@ -67,7 +68,9 @@ const Switch = () => {
     updateDOM = window.updateDOM
     /** Sync the tabs */
     addEventListener('storage', (e: StorageEvent): void => {
-      e.key === STORAGE_KEY && setMode(e.newValue as ColorSchemePreference)
+      if (e.key === STORAGE_KEY) {
+        setMode(e.newValue as ColorSchemePreference)
+      }
     })
   }, [])
 
@@ -84,9 +87,11 @@ const Switch = () => {
   return <button suppressHydrationWarning className={styles.switch} onClick={handleModeSwitch} />
 }
 
+// eslint-disable-next-line @typescript-eslint/naming-convention,react/display-name
 const Script = memo(() => (
   <script
     dangerouslySetInnerHTML={{
+      // eslint-disable-next-line @typescript-eslint/naming-convention
       __html: `(${NoFOUCScript.toString()})('${STORAGE_KEY}')`,
     }}
   />

@@ -34,7 +34,9 @@ export default function RootLayout({
         <meta name='msapplication-TileColor' content='#000000' />
         <meta name='msapplication-config' content='/favicon/browserconfig.xml' />
         <meta name='theme-color' content='#000' />
+        {/*
         <link rel='alternate' type='application/rss+xml' href='/feed.xml' />
+        */}
       </head>
       <body className={cn(inter.className, 'dark:bg-slate-900 dark:text-slate-400')}>
         <ThemeSwitcher />

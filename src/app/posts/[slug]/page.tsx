@@ -58,6 +58,8 @@ export async function generateMetadata(props: Params): Promise<Metadata> {
   }
 }
 
+// Think this has to be declared async, but haven't checked.
+// eslint-disable-next-line @typescript-eslint/require-await
 export async function generateStaticParams() {
   const posts = getAllPosts()
 

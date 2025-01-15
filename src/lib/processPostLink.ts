@@ -8,7 +8,7 @@ const processPostLink = () => {
       if (node.url && node.url.endsWith('.md') && (node.url.startsWith('./') || node.url.startsWith('/'))) {
         try {
           node.url = node.url.slice(0, node.url.length - 3)
-        } catch (error) {
+        } catch {
           throw new Error(`Invalid URL: ${node.url}`)
         }
       }
