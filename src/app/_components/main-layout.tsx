@@ -1,26 +1,18 @@
 import Footer from '@/app/_components/footer'
-import {BLOG_DESCRIPTION, BLOG_TITLE, HOME_OG_IMAGE_URL} from '@/lib/constants'
-import type {Metadata} from 'next'
 import {Inter} from 'next/font/google'
 import cn from 'classnames'
-import {ThemeSwitcher} from './_components/theme-switcher'
+import {ThemeSwitcher} from './theme-switcher'
 
-import './globals.css'
+import '@/app/globals.css'
 
 const inter = Inter({subsets: ['latin']})
 
-export const metadata: Metadata = {
-  title: BLOG_TITLE,
-  description: BLOG_DESCRIPTION,
-  openGraph: {
-    images: [HOME_OG_IMAGE_URL],
-  },
-}
-
-export default function RootLayout({
+export default function MainLayout({
+  isMainPage,
   children,
 }: Readonly<{
   children: React.ReactNode
+  isMainPage: boolean
 }>) {
   return (
     <html lang='en'>
@@ -41,7 +33,7 @@ export default function RootLayout({
       <body className={cn(inter.className, 'dark:bg-slate-900 dark:text-slate-400')}>
         <ThemeSwitcher />
         <div className='min-h-screen'>{children}</div>
-        <Footer />
+        <Footer isMainPage={isMainPage} />
       </body>
     </html>
   )
