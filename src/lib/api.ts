@@ -3,7 +3,20 @@ import fs from 'fs'
 import matter from 'gray-matter'
 import {join} from 'path'
 
-const postsDirectory = join(process.cwd(), '_posts')
+import * as rawAuthors from '@/../_data/authors.json'
+import {Author} from '@/interfaces/author'
+
+type AuthorsArray = {
+  [id: string]: Author
+}
+
+const authors: AuthorsArray = {}
+
+Object.entries(rawAuthors).forEach((data) => {
+  authors[data[0]] = {id: data[0], ...data[1]}
+})
+
+const postsDirectory = join(process.cwd(), '_data/posts')
 
 export function getPostSlugs() {
   return fs.readdirSync(postsDirectory)
@@ -14,8 +27,8 @@ export function getPostBySlug(slug: string) {
   const fullPath = join(postsDirectory, `${realSlug}.md`)
   const fileContents = fs.readFileSync(fullPath, 'utf8')
   const {data, content} = matter(fileContents)
-
-  return {...data, slug: realSlug, content} as Post
+  const author = authors[data.author as string]
+  return {...{...data, author: author}, slug: realSlug, content} as Post
 }
 
 export function getAllPosts(): Post[] {

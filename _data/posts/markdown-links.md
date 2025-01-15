@@ -2,9 +2,7 @@
 title: "Markdown Links"
 excerpt: "Things using links in Markdown - other pages & images"
 date: "2020-03-16T05:35:07.322Z"
-author:
-  name: Tim Neutkens
-  picture: "/assets/blog/authors/tim.jpeg"
+author: "tim"
 ogImage:
   url: "/assets/blog/hello-world/cover.jpg"
 ---
