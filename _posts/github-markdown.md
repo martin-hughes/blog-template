@@ -1,7 +1,6 @@
 ---
 title: "Github Extensions to Markdown"
 excerpt: "Things seen in Github Flavoured Markdown"
-coverImage: "/assets/blog/preview/cover.jpg"
 date: "2020-03-16T05:35:07.322Z"
 author:
   name: Joe Haddad
