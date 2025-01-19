@@ -6,9 +6,12 @@ export function PostBody({content}: Props) {
   return (
     <div
       className='prose dark:prose-invert
+      prose-blockquote:not-italic
+      prose-blockquote:font-normal
       prose-blockquote:rounded-md
       prose-blockquote:bg-sky-100
       prose-blockquote:py-1.5
+      prose-blockquote:pr-6
       prose-blockquote:mb-5
       [&>*]:prose-blockquote:my-0
       dark:prose-blockquote:bg-sky-950

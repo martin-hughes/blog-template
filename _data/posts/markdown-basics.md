@@ -58,7 +58,7 @@ End of list
 
 This paragraph *has* _all_ sorts __of__ **styles**.
 
-> This should be styled as a note
+> This should be styled as a note. It's quite long so that we can check the right hand margin is correct.
 
 ###### Heading 6
 
@@ -67,5 +67,6 @@ Sometimes we like to see `things in code`.
 ```c
 void note() {
   printf("and sometimes we like long blocks of code\n");
+  // This comment should be very long so we can see what happens when the code length is longer than the page width...
 }
 ```
