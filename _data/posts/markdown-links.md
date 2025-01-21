@@ -3,8 +3,6 @@ title: "Markdown Links"
 excerpt: "Things using links in Markdown - other pages & images"
 date: "2020-03-16T05:35:07.322Z"
 author: "tim"
-ogImage:
-  url: "/assets/blog/hello-world/cover.jpg"
 ---
 
 # Images

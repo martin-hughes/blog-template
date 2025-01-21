@@ -1,7 +1,7 @@
 import {Metadata} from 'next'
 import {notFound} from 'next/navigation'
 import {getAllPosts, getPostBySlug} from '@/lib/api'
-import {BLOG_LONG_TITLE} from '@/lib/constants'
+import {BLOG_TITLE, DEFAULT_METADATA} from '@/lib/constants'
 import markdownToHtml from '@/lib/markdownToHtml'
 import Container from '@/app/_components/container'
 import Header from '@/app/_components/header'
@@ -47,13 +47,16 @@ export async function generateMetadata(props: Params): Promise<Metadata> {
     return notFound()
   }
 
-  const title = `${post.title} | ${BLOG_LONG_TITLE}`
+  const title = `${post.title} | ${BLOG_TITLE}`
 
   return {
-    title,
+    ...DEFAULT_METADATA,
+    title: title,
+    description: post.excerpt,
     openGraph: {
       title,
-      images: [post.ogImage.url],
+      description: post.excerpt,
+      images: post.ogImage ? [post.ogImage.url] : DEFAULT_METADATA.openGraph!.images,
     },
   }
 }

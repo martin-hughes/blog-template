@@ -7,3 +7,12 @@ The blog posts are stored in `/_posts` as Markdown files with front matter suppo
 # Notes
 
 `blog-starter` uses [Tailwind CSS](https://tailwindcss.com) [(v3.0)](https://tailwindcss.com/blog/tailwindcss-v3).
+
+# Setup
+
+* Clone to your preferred location
+* Set the values you want in `src/lib/constants.ts`
+* Write blog posts
+* Set the environment variable `BUILD_BASE_URL` to the root of your website
+* `npm run build` - generates the website in the `out` directory
+* Publish that directory.
