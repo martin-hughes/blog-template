@@ -59,6 +59,8 @@ End of list
 This paragraph *has* _all_ sorts __of__ **styles**.
 
 > This should be styled as a note. It's quite long so that we can check the right hand margin is correct.
+> 
+> This is a second paragraph.
 
 ###### Heading 6
 
